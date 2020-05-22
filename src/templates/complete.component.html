@@ -1,0 +1,22 @@
+<div class="column2">
+    <div class="title2"><h1 class="title1"> Completed </h1> </div>
+
+    <div class="todo">
+        <div >
+           
+            <form>
+                <div class="form-group">
+                  
+                  <ul class="list-group">
+                    <li [ngClass]=" {'group-item3':true,'group-item5': data.status }" *ngFor="let data of datas | checked: !checkedd">                     
+                        {{data.title}}
+                        </li>    
+                  </ul>
+                  
+                </div>
+            </form>
+               
+           
+         </div>
+       </div>
+    </div>

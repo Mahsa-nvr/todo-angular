@@ -1,0 +1,43 @@
+<div class="grid-container">
+    <div><complete [datas]="datas" [checked]="checked"></complete></div>
+ <div class="column2">
+       <div class="title"><h1 class="title1"> Todo List </h1> </div>
+
+       <div class="todo">
+        <div >
+           
+            <form >
+                <div class="form-group">
+                   <div class="row-title">
+                      <input type="text" name="inputNew" class="firstinput"  id="inputNew"  placeholder="what do you want to do? " [(ngModel)]="inputNew" >                     
+                      <button type="submit" class="btn btn-primary" (click)="addData()">submit</button>
+                      <input type="time" step="1" name="deadTime" class="firstinput" id="deadTime"   [(ngModel)]="deadTime ">                    
+                  </div>
+                  <ul class="list-group">
+                    <li [ngClass]="{'group-item3':true,'group-item4':data.show}" *ngFor="let data of datas | checked:checkedd ">
+                        <input type="checkbox" (change)="checkedData(data)">
+                        {{data.title}}
+                        <button type="button" class="btn btn-danger btn-loc" (click)="removeData(data)">delete</button>
+                        <button type="button" class="btn btn-info btn-loc" (click)="editData(data)">edit</button> 
+                        </li>    
+                  </ul>
+                  
+                </div>
+            </form>
+               
+           
+         </div>
+       </div>
+      </div>
+    </div>
+
+  <div [ngStyle]="{
+    'background-color' : '#28A745',
+    'color' : 'white',
+     'padding' : '16px',
+     'position' : 'absolute',
+     'top' : topNot ,
+     'right': '16px',
+     'z-index' : '100',
+     'transition': 'top 0.5s ease'
+  }">your item successfully deleted</div>
